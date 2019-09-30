@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>VelO2 | L'application intéractive de location de vélos à Cergy-Pontoise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+
+    <!-- MAP LEAFLET -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ICONES FONT AWESOME-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- REFERENCEMENT-->
+
+    <meta name="description" content="VelO2 la carte intéractive de locations de vélos à Cergy-Pontoise">
+    <meta name="keywords" content="vélos, location, réservation, Cergy-Pntoise, Cergy, île-de-France, ville, france, tourisme, loisirs, déplacements, balade">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="author" content="Anne-Claire Vilez">
+
+    <!-- OPEN GRAPH -->
+
+    <meta property="og:site_name" content="VelO2" />
+    <meta property="og:title" content="VelO2 | Des vélos en libre-service à Cergy-Pontoise" />
+    <meta property="og:description" content="VelO2: l'appli qui vous permet de réserver facilement un vélo à Cergy-Pontoise" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="#" />
+    <meta property="og:url" content="#" />
+
+
+
+
+
+    <!-- FAVICONS -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- FIN HEAD -->
+
+</head>
+
+
+<!-- BODY-->
+
+<body>
+
+
+
+    <!-- HEADER -->
+
+    <header>
+        <div id="logo">
+            <a href="http://www.velo2.cergypontoise.fr/"><img src="img/logo.jpg" alt="logo VelO2" /></a>
+        </div>
+
+
+        <a href="#" id="logo"></a>
+        <div id="hamburger">
+            <div id="hamburger-content">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#app">Carte</a></li>
+                        <li><a href="#app">Réservation</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Menu burger -->
+
+            <button id="hamburger-button">&#9776;</button>
+            <div id="hamburger-sidebar">
+                <div id="hamburger-sidebar-header"></div>
+                <div id="hamburger-sidebar-body"></div>
+            </div>
+            <div id="hamburger-overlay"></div>
+        </div>
+
+
+    </header>
+
+    <!-- FIN HEADER -->
+
+
+
+
+    <!-- SLIDER -->
+
+
+    <section id="slider-inner">
+        <h1>Comment ça marche ?</h1>
+
+        <!-- Conteneur du slider -->
+
+        <div id="slider">
+            <!-- Slide_1 image + texte -->
+
+            <div class="etape">
+                <div class="image-slider">
+                    <img src="img/greenbike.jpg" alt="img 1">
+                </div>
+                <div class="text-slider">
+                    <h2>Etape 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+            </div>
+            <!-- Slide_2 image + texte -->
+
+            <div class="etape">
+                <div class="image-slider">
+                    <img src="img/pictovelo.jpg" alt="img 2">
+                </div>
+                <div class="text-slider">
+                    <h2>Etape 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+            </div>
+            <!-- Slide_3 image + texte -->
+
+            <div class="etape">
+                <div class="image-slider">
+                    <img src="img/wallbike.jpg" alt="img 3">
+                </div>
+                <div class="text-slider">
+                    <h2>Etape 3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+            </div>
+            <!-- Slide_4 image + texte -->
+
+            <div class="etape">
+                <div class="image-slider">
+                    <img src="img/veloville.jpg" alt="img 4">
+                </div>
+                <div class="text-slider">
+                    <h2>Etape 4</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+            </div>
+
+            <!-- Slide_5 image + texte -->
+
+            <div class="etape">
+                <div class="image-slider">
+                    <img src="img/velowork.jpg" alt="img 5">
+                </div>
+                <div class="text-slider">
+                    <h2>Etape 5</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boutons du slider -->
+
+        <span class="bouton-slider" id="left"><i class="fas fa-chevron-left"></i></span>
+        <span class="bouton-slider" id="right"><i class="fas fa-chevron-right"></i></span>
+    </section>
+
+
+
+
+
+    <!-- FIN SLIDER -->
+
+
+
+    <!-- MAP Infos Stations et Resa -->
+
+    <section id="app">
+
+        <div id="map"></div>
+
+        <!-- FIN MAP -->
+
+
+
+        <!-- ENCART RESA -->
+
+        <!-- INFO STATIONS -->
+
+        <aside id="form">
+
+            <div id="infoStations">
+                <h2>Détails de la station : </h2><br />
+                <ul id="listeInfos">
+                    <li id="stationName">Nom de la station :<span id="stationNom"></span> </li>
+                    <li id="stationAddress">Adresse de la station :<span id="stationAdresse"></span> </li>
+                    <li id="stationStatus">Etat de la station :<span id="stationEtat"></span> </li>
+                    <li id="availableBikes">Nombre de vélos disponibles :<span id="velosDispos"></span> </li>
+                    <li id="availableStands">Attaches disponibles:<span id="attachesVelos"></span> </li>
+                </ul>
+            </div>
+
+            <!-- FORM RESA -->
+
+            <div id="resa">
+                <h2 class="titreResa">Je réserve mon vélo : </h2>
+                <form>
+                    <label for="name">Nom :</label> <input type="text" id="nom" name="user_name"><br />
+                    <label for="firstname">Prénom :</label> <input type="text" id="prenom" name="user_firstname">
+                </form>
+                <canvas id="canvas"></canvas>
+                <div class="boutonsResa">
+                    <button type="button" class="validerResa" disabled>Valider</button>
+                    <button type="button" class="annulerResa">Annuler</button>
+                </div>
+            </div>
+
+
+            <!-- FIN FORM RESA -->
+
+
+
+        </aside>
+
+
+        <!-- FIN ENCART RESA -->
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <a href="https://www.cergypontoise.fr/"><img src="img/logo%20cergy.jpg" alt="logo ville de Cergy-Pontoise"></a>
+    </footer>
+
+    <!-- Mentions légales, CGV , crédits -->
+
+    <!-- FIN FOOTER -->
+
+
+
+
+
+    <!-- SCRIPTS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
+
+
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+
+    <script src="js/ajax.js"></script>
+
+    <!--  <script src="js/test.js"></script> ancienne version non objet-->
+
+    <script src="js/slider.js"></script>
+
+    <script src="js/map.js"></script>
+
+    <script src="js/menuBurger.js"></script>
+
+    <script src="js/main.js"></script>
+
+
+    <!-- FIN SCRIPT -->
+
+
+</body>
+
+</html>
