@@ -1,5 +1,4 @@
 // classe pour la map
-
 class MapClass {
     constructor(mapID, lat, lng, zoom, URL) {
         this.mapID = mapID;
@@ -42,57 +41,33 @@ class MapClass {
         const orangeIcon = new LeafIcon({
             iconUrl: 'FA/bike-orange.svg'
         });
-
         if ((station.status) === "OPEN" && (station.available_bikes) >= 5) {
-
             this.markerElt = L.marker(([station.position.lat, station.position.lng]), {
-
                 icon: greenIcon
             }) //.addTo(map).bindPopup(station.address + ' la station est ouverte, il reste actuellement ' + station.available_bikes + ' vélos disponibles.');
-
         } else if ((station.status) === "OPEN" && (station.available_bikes) < 5 && (station.available_bikes) > 0) {
-
             this.markerElt = L.marker(([station.position.lat, station.position.lng]), {
-
                 icon: orangeIcon
             }) //.addTo(map).bindPopup(station.address + ' la station est ouverte, il reste actuellement ' + station.available_bikes + ' vélos disponibles.');
-
         } else {
-
             this.markerElt = L.marker(([station.position.lat, station.position.lng]), {
-
                 icon: redIcon
             }) //.addTo(map).bindPopup(station.address + ' la station est fermée, il ne reste actuellement que ' + station.available_bikes + ' vélos disponibles.');
-
         }
-
         this.map.addLayer(this.markerElt);
 
-
         // evenement addEventListener
-
         this.markerElt.addEventListener('click', function () {
-
             console.log('clic');
-
             // myFormulaire = new Form(station)
-
             document.getElementById("stationNom").innerHTML = station.name;
-
             document.getElementById("stationAdresse").innerHTML = station.address;
-
             document.getElementById("stationEtat").innerHTML = station.status;
-
             document.getElementById("velosDispos").innerHTML = station.available_bikes;
-
             document.getElementById("attachesVelos").innerHTML = station.available_bike_stands;
-
         });
-
     };
-
     recupererStations() {
-
         ajaxGet(this.URL, function (response) {
             // console.log(response);
             let stations = JSON.parse(response);
