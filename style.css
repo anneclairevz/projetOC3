@@ -1,0 +1,394 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #777777;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+/**** LOGO ****/
+
+#logo {
+    margin-left: 120px;
+}
+
+/**** HEADER FIXE ****/
+
+header {
+    top: 0px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/**** MENU NAVIGATION ****/
+
+.menu {
+    margin-right: 120px;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #0c0467;
+}
+
+.menu a:hover {
+    color: #b0fd0d;
+    border-top: 3px solid #b0fd0d;
+    padding-top: 43px;
+}
+
+
+/**** SLIDER 
+
+#sliderContainer {}
+
+#slider {}
+
+.sliderImg {}
+****/
+
+
+/**** slider test ****/
+
+
+/* ------------- SLIDER ------------- */
+
+/* Mise en page du conteneur du slider */
+
+#slider-inner {
+    margin-top: 131px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 0 10px;
+
+}
+
+/* Mise en page du titre du slider */
+#slider-inner h1 {
+    font-weight: lighter;
+    font-size: 2em;
+    color: #0c0467;
+}
+
+/* Mise en page du slider */
+#slider {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: 2%;
+    background-color: #ffffff;
+    border: 1px solid silver;
+    box-shadow: 4px 4px 4px silver;
+    border-radius: 5px;
+}
+
+/* Mise en page du contenu du slider */
+.etape {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Mise en page du conteneur d'image */
+.image-slider {
+    width: 900px;
+    height: 595spx;
+    margin: 5px;
+}
+
+/* Mise en page de l'image */
+.image-slider img {
+    width: 100%;
+}
+
+/* Mise en page du conteneur de texte */
+.text-slider {
+    padding: 10px;
+    margin: 5px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Mise en page du titre du texte */
+.text-slider h2 {
+    color: white;
+    border-radius: 5px;
+    background-color: #b0fd0d;
+    padding: 5px;
+}
+
+/* Mise en page des boutons du slider */
+.bouton-slider {
+    position: relative;
+    /*top: 325px;*/
+    color: #0c0467;
+    font-size: 2em;
+    cursor: pointer;
+
+}
+
+/* Changement de couleur des boutons au survol */
+.bouton-slider :hover {
+    color: #b0fd0d;
+}
+
+/* Position bouton gauche */
+#left {
+    right: 38%;
+    bottom: 160px;
+}
+
+/* Position bouton droit */
+#right {
+    left: 38%;
+    bottom: 200px;
+}
+
+
+
+
+
+
+/**** MAP ****/
+
+
+#app {
+    padding-top: 120px;
+    display: flex;
+}
+
+
+#map {
+    position: relative;
+    width: 70%;
+    height: 600px;
+    /*margin-top: 0.5%;*/
+    border-radius: 5px;
+    /*padding: 2%;*/
+    -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+
+/**** RESA FORM ****/
+
+h2 {}
+
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+#infoStations {
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    justify-content: justify;
+    margin: 2%;
+    padding: 2%;
+    border: 1px solid silver;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.titreResa {
+    margin: 4%;
+}
+
+#canvas {
+    padding: 2%;
+    margin: 2%;
+    height: 200px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+/**** champs résa ****/
+
+form {
+    /* Uniquement centrer le formulaire sur la page */
+    margin: 0 auto;
+    width: auto;
+    /* Encadré pour voir les limites du formulaire */
+    padding: 5%;
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+}
+
+input,
+textarea {
+    padding: 2%;
+    /* Pour s'assurer que tous les champs texte ont la même police.
+     Par défaut, les textarea ont une police monospace */
+    font: 1em sans-serif;
+
+    /* Pour que tous les champs texte aient la même dimension */
+    width: auto;
+    box-sizing: border-box;
+
+}
+
+input:focus,
+textarea:focus {
+    /* Pour souligner légèrement les éléments actifs */
+    border-color: #000;
+}
+
+textarea {
+    /* Pour donner assez de place pour écrire du texte */
+    height: 5em;
+}
+
+
+/**** FOOTER ****/
+
+
+footer {
+    width: 100%;
+
+}
+
+
+
+
+
+
+/**** RESPONSIVE ****/
+
+
+
+
+
+
+
+
+
+
+
+/****** TABLETTE LANDSCAPE ET PORTRAIT ******/
+
+
+
+
+/* test */
+
+#hamburger,
+#hamburger-content {
+    display: inline;
+}
+
+#hamburger-button {
+    display: none;
+    cursor: pointer;
+    color: #0c0467;
+    background: none;
+    border: none;
+    font-size: 30px;
+    vertical-align: top;
+    padding: 0;
+    line-height: 47px;
+    float: right;
+    margin-right: 32px;
+}
+
+#hamburger-overlay {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#hamburger-sidebar {
+    display: none;
+    position: fixed;
+    width: 84%;
+    z-index: 20000;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform .2s ease-out;
+}
+
+#hamburger-sidebar li {
+    display: block;
+}
+
+
+#hamburger-sidebar-body li:before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+}
+
+#hamburger-sidebar-body .button {
+    margin-top: 16px;
+    text-align: center;
+    float: none;
+    display: block;
+    height: auto;
+    line-height: inherit;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+
+
+    #hamburger-content {
+        display: none;
+    }
+
+    #hamburger-button,
+    #hamburger-sidebar,
+    .hamburger-activated #hamburger-overlay {
+        display: block;
+    }
+
+    .hamburger-activated #hamburger-sidebar {
+        transform: translateX(0);
+    }
+}
