@@ -58,13 +58,8 @@ class MapClass {
 
         // evenement addEventListener
         this.markerElt.addEventListener('click', function () {
-            console.log('clic');
-            // myFormulaire = new Form(station)
-            document.getElementById("stationNom").innerHTML = station.name;
-            document.getElementById("stationAdresse").innerHTML = station.address;
-            document.getElementById("stationEtat").innerHTML = station.status;
-            document.getElementById("velosDispos").innerHTML = station.available_bikes;
-            document.getElementById("attachesVelos").innerHTML = station.available_bike_stands;
+            /*console.log('clic');*/
+            let myFormulaire = new Form(station);
         });
     };
     recupererStations() {
