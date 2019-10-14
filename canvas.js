@@ -34,7 +34,8 @@ class Canvas {
             this.renderCanvas();
         }.bind(this))();*/
 
-        this.canvas.addEventListener("touchstart", function (e) {
+
+        /*this.canvas.addEventListener("touchstart", function (e) {
             this.mousePos = this.getTouchPos(this.canvas, e);
             let touch = e.touches[0];
             let mouseEvent = new MouseEvent("mousedown", {
@@ -54,7 +55,7 @@ class Canvas {
                 clientY: touch.clientY
             });
             this.canvas.dispatchEvent(mouseEvent);
-        }, false);
+        }, false);*/
 
     }
     moveDrawing(e) {
@@ -70,11 +71,23 @@ class Canvas {
     endDrawing() {
         this.drawing = false;
     }
+
     //fonction tracé sur mobile
 
+    startTouchDrawing(e) {
+        this.drawing = true;
+        this.lastPos = this.getTouchPos(this.canvas, e);
+        this.renderCanvas();
+    }
 
+    endTouchDrawing(e) {
+        this.drawing = false;
+    }
 
-
+    moveTouchDrawing(e) {
+        this.touchPos = this.getTouchPos(this.drawing, e);
+        this.renderCanvas();
+    }
 
     renderCanvas() {
         if (this.drawing) {
@@ -85,6 +98,7 @@ class Canvas {
         }
 
     }
+
     getMousePos(canvasDom, mouseEvent) {
         let rect = canvasDom.getBoundingClientRect();
         return {
@@ -92,9 +106,6 @@ class Canvas {
             y: mouseEvent.clientY - rect.top
         };
     }
-
-
-
 
     getTouchPos(canvasDom, touchEvent) {
         let rect = this.canvasDom.getBoundingClientRect();
