@@ -2,7 +2,6 @@ class Form {
     constructor(station) {
         this.station = station;
         this.Init();
-
     }
     Init() {
         document.getElementById("stationNom").innerHTML = this.station.name;
