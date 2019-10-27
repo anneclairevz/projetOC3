@@ -2,7 +2,8 @@
 
 class Canvas {
     constructor() {
-        this.canvas = document.querySelector('#canvas');
+        this.canvas = document.getElementById('canvas');
+        console.log(this.canvas);
         this.context = this.canvas.getContext('2d');
         this.context.strokeStyle = "#222222";
         this.context.lineWidth = 2;
@@ -11,13 +12,23 @@ class Canvas {
             x: 0,
             y: 0
         };
+
         this.lastPos = this.mousePos;
+        this.touchPos = {
+            x: 0,
+            y: 0
+        };
+        this.lastTouchPos = this.touchPos;
         this.Init(); //La classe appelle une de ses propres fonctions.
     }
     Init() {
         this.canvas.addEventListener("mousedown", this.startDrawing.bind(this));
         this.canvas.addEventListener("mouseup", this.endDrawing.bind(this));
         this.canvas.addEventListener("mousemove", this.moveDrawing.bind(this));
+        this.canvas.addEventListener("touchstart", this.startTouchDrawing.bind(this));
+        this.canvas.addEventListener("touchend", this.endTouchDrawing.bind(this));
+        this.canvas.addEventListener("touchleave", this.endTouchDrawing.bind(this));
+        this.canvas.addEventListener("touchmove", this.moveTouchDrawing.bind(this));
 
         /*window.requestAnimFrame = (function (callback) {
             return window.requestAnimationFrame ||
@@ -35,27 +46,27 @@ class Canvas {
         }.bind(this))();*/
 
 
-        /*this.canvas.addEventListener("touchstart", function (e) {
-            this.mousePos = this.getTouchPos(this.canvas, e);
-            let touch = e.touches[0];
-            let mouseEvent = new MouseEvent("mousedown", {
-                clientX: touch.clientX,
-                clientY: touch.clientY
-            });
-            this.canvas.dispatchEvent(mouseEvent);
-        }, false);
-        this.canvas.addEventListener("touchend", function (e) {
-            let mouseEvent = new MouseEvent("mouseup", {});
-            this.canvas.dispatchEvent(mouseEvent);
-        }, false);
-        this.canvas.addEventListener("touchmove", function (e) {
-            let touch = e.touches[0];
-            let mouseEvent = new MouseEvent("mousemove", {
-                clientX: touch.clientX,
-                clientY: touch.clientY
-            });
-            this.canvas.dispatchEvent(mouseEvent);
-        }, false);*/
+        /*  this.canvas.addEventListener("touchstart", function (e) {
+      this.mousePos = this.getTouchPos(this.canvas, e);
+      let touch = e.touches[0];
+      let mouseEvent = new MouseEvent("mousedown", {
+          clientX: touch.clientX,
+          clientY: touch.clientY
+      });
+      this.canvas.dispatchEvent(mouseEvent);
+  }, false);
+  this.canvas.addEventListener("touchend", function (e) {
+      let mouseEvent = new MouseEvent("mouseup", {});
+      this.canvas.dispatchEvent(mouseEvent);
+  }, false);
+  this.canvas.addEventListener("touchmove", function (e) {
+      let touch = e.touches[0];
+      let mouseEvent = new MouseEvent("mousemove", {
+          clientX: touch.clientX,
+          clientY: touch.clientY
+      });
+      this.canvas.dispatchEvent(mouseEvent);
+  }, false);*/
 
     }
     moveDrawing(e) {
@@ -63,12 +74,12 @@ class Canvas {
         this.renderCanvas();
     }
 
-    startDrawing(e) { //e capture l evenement de la souris 
+    startDrawing(e) { //Je capture l evenement de la souris 
         this.drawing = true; //true commence à dessiner
         this.lastPos = this.getMousePos(this.canvas, e); // recupere la position de la souris
         this.renderCanvas(); //fonction de dessin 
     }
-    endDrawing() {
+    endDrawing(e) {
         this.drawing = false;
     }
 
@@ -77,15 +88,17 @@ class Canvas {
     startTouchDrawing(e) {
         this.drawing = true;
         this.lastPos = this.getTouchPos(this.canvas, e);
+        console.log(this.lastPos);
         this.renderCanvas();
     }
 
-    endTouchDrawing(e) {
+    endTouchDrawing() {
         this.drawing = false;
     }
 
     moveTouchDrawing(e) {
-        this.touchPos = this.getTouchPos(this.drawing, e);
+        this.mousePos = this.getTouchPos(this.canvas, e);
+        console.log(this.drawing);
         this.renderCanvas();
     }
 
@@ -108,7 +121,7 @@ class Canvas {
     }
 
     getTouchPos(canvasDom, touchEvent) {
-        let rect = this.canvasDom.getBoundingClientRect();
+        let rect = canvasDom.getBoundingClientRect();
         return {
             x: touchEvent.touches[0].clientX - rect.left,
             y: touchEvent.touches[0].clientY - rect.top
