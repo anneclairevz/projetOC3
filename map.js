@@ -1,11 +1,12 @@
 // classe pour la map
 class MapClass {
-    constructor(mapID, lat, lng, zoom, URL) {
+    constructor(mapID, lat, lng, zoom, URL, Resa) {
         this.mapID = mapID;
         this.lat = lat;
         this.lng = lng;
         this.zoom = zoom;
         this.URL = URL;
+        this.Resa = Resa;
         this.markerElt;
         this.map = L.map(mapID, {
             center: [lat, lng],
@@ -24,7 +25,7 @@ class MapClass {
 
     //nvelle fonction
     createMarker(station) {
-        var LeafIcon = L.Icon.extend({
+        let LeafIcon = L.Icon.extend({
             options: {
                 shadowUrl: 'FA/bicycle-solid.svg',
                 iconSize: [49, 99],
@@ -59,8 +60,8 @@ class MapClass {
         // evenement addEventListener
         this.markerElt.addEventListener('click', function () {
             /*console.log('clic');*/
-            let myFormulaire = new Form(station);
-        });
+            let myFormulaire = new Form(station, this.Resa);
+        }.bind(this));
     };
     recupererStations() {
         ajaxGet(this.URL, function (response) {
