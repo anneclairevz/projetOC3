@@ -227,14 +227,13 @@
                 </form>
                 <canvas id="canvas"></canvas>
                 <div class="boutonsResa">
-                    <button type="button" class="validerResa">Valider ma réservation</button>
-                    <button type="button" class="annulerResa">Annuler</button>
+                    <input type="button" id="validerResa" value="Valider ma réservation">
+                    <input type="button" id="effacerSignature" value="Effacer">
                 </div>
             </div>
 
 
             <!-- FIN FORM RESA -->
-
 
 
         </aside>
@@ -244,10 +243,26 @@
 
     </section>
 
+    <!-- ENCART TIMER -->
+
+    <div id="timer">
+        <h3>Votre réservation</h3>
+        <span class="resaTexte">Aucune réservation en cours</span>
+        <p class="timer">
+            <span class="minutes"></span>
+            <span class="secondes"></span>
+        </p>
+        <button type="button" class="annulerResa">Annuler</button>
+    </div>
+
     <!-- FOOTER -->
 
     <footer>
-        <a href="https://www.cergypontoise.fr/"><img src="img/logo%20cergy.jpg" alt="logo ville de Cergy-Pontoise"></a>
+        <div id="cergyPics">
+            <a href="https://www.cergypontoise.fr/"><img src="img/logo%20cergy.jpg" alt="logo ville de Cergy-Pontoise"></a>
+            <img src="img/situer-cergy.gif" alt="photo situer Cergy-Pontoise">
+            <img src="img/cergy.jpg" alt="photo ville de Cergy-Pontoise">
+        </div>
     </footer>
 
     <!-- Mentions légales, CGV , crédits -->
