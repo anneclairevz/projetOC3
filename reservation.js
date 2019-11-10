@@ -2,11 +2,59 @@ class ResaClass {
     constructor() {
         this.station;
         this.clientName;
+        this.firstName;
+        this.date;
+        this.minutes;
+
+    };
+    Init(station, nom, prenom, minutes) {
+        this.station = station;
+        this.clientName = nom;
+        this.firstName = prenom;
+        this.date = Date.now();
+        this.minutes = minutes;
+
+        sessionStorage.setItem("stationNom", this.station);
+        localStorage.setItem("nom", this.clientName);
+        localStorage.setItem("prenom", this.firstName);
+        sessionStorage.setItem("date", this.date);
+
+        // console.log(station);
+        // console.log(clientName);
+        // console.log(firstName);
+    };
+
+    check() {
+        if (sessionStorage.getItem("date") !== null) {
+            this.station = sessionStorage.getItem("stationNom");
+            this.date = sessionStorage.getItem("date");
+            this.clientName = localStorage.getItem("nom");
+            this.firstName = localStorage.getItem("prenom");
+            //appeler la fonction afficher resa
+        }
+    }
+    //fonction afficher resa
+
+    //fonction timer chrono
+};
+
+
+
+
+
+
+
+
+
+/*
+class ResaClass {
+    constructor() {
+        this.station;
+        this.clientName;
         this.firstname;
         this.date;
     }
     Init() {
-        //local storage pr nom prenom station date
         sessionStorage.setItem("station", this.station);
         sessionStorage.setItem("nom", this.clientName);
         sessionStorage.setItem("prenom", this.firstname);
@@ -37,7 +85,8 @@ class ResaClass {
     }
 }
 
-/* Test fonction surligne champs vide 
+Test fonction surligne un champs vide
+
 function surligne(champ, erreur) {
     if (erreur)
         champ.style.backgroundColor = "#fba";
@@ -45,22 +94,5 @@ function surligne(champ, erreur) {
         champ.style.backgroundColor = "";
 }*/
 
-// Test on submit
 
 
-// Below Function Executes On Form Submit
-function ValidationResa() {
-    // Storing Field Values In Variables
-    let name = document.getElementById("nom").value;
-    let firstName = document.getElementById("prenom").value;
-    let canva = document.getElementById("canvas").value;
-
-    // Conditions
-    if (name != '' && firstName != '' && canva != '') {
-        alert("All type of validation has done on OnSubmit event.");
-        return true;
-    } else {
-        alert("The Contact No. must be at least 10 digit long!");
-        return false;
-    }
-}
