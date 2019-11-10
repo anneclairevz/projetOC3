@@ -1,3 +1,4 @@
+
 class ResaClass {
     constructor() {
         this.station;
