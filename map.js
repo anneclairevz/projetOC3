@@ -1,4 +1,3 @@
-
 // classe pour la map
 class MapClass {
     constructor(mapID, lat, lng, zoom, URL, Resa) {
