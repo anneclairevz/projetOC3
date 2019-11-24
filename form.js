@@ -23,6 +23,7 @@ class Form {
         document.getElementById("effacerSignature").addEventListener('click', function () {
             this.myCanvas.clearCanvas();
         }.bind(this));
+        // event de la validation resa
         document.getElementById('validerResa').addEventListener('click', function () { // On écoute l'événement click
             this.Resa.Init(this.station, document.getElementById("nom").value, document.getElementById("prenom").value, 20);
 
@@ -42,7 +43,6 @@ class Form {
 
         } else {
             alert("Merci de remplir le formulaire");
-
         }
     }
 
