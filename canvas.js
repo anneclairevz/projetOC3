@@ -1,4 +1,3 @@
-
 // transposer canvas en POO
 
 class Canvas {
@@ -6,7 +5,7 @@ class Canvas {
         this.canvas = document.getElementById('canvas');
         console.log(this.canvas);
         this.context = this.canvas.getContext('2d');
-        this.context.strokeStyle = "#222222";
+        this.context.strokeStyle = "#8bca02";
         this.context.lineWidth = 2;
         this.drawing = false;
         this.filled = false;
