@@ -1,11 +1,10 @@
-
 <!DOCTYPE HTML>
 <html lang="fr">
 
 <head>
     <meta charset="utf-8">
-    <title>VelO2 | L'application intéractive de location de vélos à Cergy-Pontoise</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <title>V&eacute;lO&sup2; | L'application intéractive de location de vélos à Cergy-Pontoise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1 user-scalable=no">
 
     <!-- MAP LEAFLET -->
 
@@ -21,7 +20,7 @@
     <!-- REFERENCEMENT-->
 
     <meta name="description" content="VelO2 la carte intéractive de locations de vélos à Cergy-Pontoise">
-    <meta name="keywords" content="vélos, location, réservation, Cergy-Pntoise, Cergy, île-de-France, ville, france, tourisme, loisirs, déplacements, balade">
+    <meta name="keywords" content="vélos, location, réservation, Cergy-Pontoise, Cergy, île-de-France, Vald'Oise, ville, france, tourisme, loisirs, déplacements, balade">
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index, follow">
     <meta name="author" content="Anne-Claire Vilez">
@@ -35,8 +34,12 @@
     <meta property="og:image" content="#" />
     <meta property="og:url" content="#" />
 
+    <!-- FONT -->
 
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,700&display=swap');
 
+    </style>
 
 
     <!-- FAVICONS -->
@@ -117,60 +120,60 @@
         <!-- Conteneur du slider -->
 
         <div id="slider">
-            <!-- Slide_1 image + texte -->
+            <!-- Slide 1 image & texte -->
 
             <div class="etape">
                 <div class="image-slider">
-                    <img src="img/greenbike.jpg" alt="img 1">
+                    <img src="img/tuto.gif" alt="réserver un vélo à Cergy">
                 </div>
                 <div class="text-slider">
                     <h2>Etape 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                    <p class="tuto">Choisissez votre lieu parmi les <strong>43 stations</strong> <strong>V&eacute;lO&sup2;</strong> de <strong>Cergy-Pontoise</strong> (95).</p>
                 </div>
             </div>
-            <!-- Slide_2 image + texte -->
+            <!-- Slide 2 image & texte -->
 
             <div class="etape">
                 <div class="image-slider">
-                    <img src="img/pictovelo.jpg" alt="img 2">
+                    <img src="img/tuto2.gif" alt="img 2">
                 </div>
                 <div class="text-slider">
                     <h2>Etape 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                    <p class="tuto">L'<strong>adresse</strong> et les détails de la <strong>station</strong> sélectionnée s'affichent. <strong>Confirmez votre choix.</strong></p>
                 </div>
             </div>
-            <!-- Slide_3 image + texte -->
+            <!-- Slide 3 image & texte -->
 
             <div class="etape">
                 <div class="image-slider">
-                    <img src="img/wallbike.jpg" alt="img 3">
+                    <img src="img/tuto3.gif" alt="img 3">
                 </div>
                 <div class="text-slider">
                     <h2>Etape 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                    <p class="tuto">Validez votre choix en entrant vos <strong>nom</strong>, <strong>prénom</strong> et en apposant votre <strong>signature</strong> pour confirmer votre <strong>réservation</strong>.</p>
                 </div>
             </div>
-            <!-- Slide_4 image + texte -->
+            <!-- Slide 4 image & texte -->
 
             <div class="etape">
                 <div class="image-slider">
-                    <img src="img/veloville.jpg" alt="img 4">
+                    <img src="img/tuto4.gif" alt="img 4">
                 </div>
                 <div class="text-slider">
                     <h2>Etape 4</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                    <p class="tuto">Votre <strong>réservation</strong> est enregistrée pour une durée de <strong>20 minutes</strong>.</p>
                 </div>
             </div>
 
-            <!-- Slide_5 image + texte -->
+            <!-- Slide 5 image & texte -->
 
             <div class="etape">
                 <div class="image-slider">
-                    <img src="img/velowork.jpg" alt="img 5">
+                    <img src="img/tuto5.gif" alt="img 5">
                 </div>
                 <div class="text-slider">
                     <h2>Etape 5</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                    <p class="tuto">Rendez-vous à la <strong>station</strong> pour profiter de votre <strong>vélo</strong> !</p>
                 </div>
             </div>
         </div>
@@ -208,13 +211,13 @@
             <div id="infoStations">
                 <h2>Détails de la station : </h2><br />
                 <ul id="listeInfos">
-                    <li id="stationName">Nom de la station : <span id="stationNom"></span> </li>
-                    <li id="stationAddress">Adresse de la station : <span id="stationAdresse"></span> </li>
-                    <li id="stationStatus">Etat de la station : <span id="stationEtat"></span> </li>
-                    <li id="availableBikes">Nombre de vélos disponibles : <span id="velosDispos"></span> </li>
-                    <li id="availableStands">Attaches disponibles : <span id="attachesVelos"></span> </li>
+                    <li id="stationName"><strong>N&deg; et nom de la station :</strong> <span id="stationNom" class="lwc"></span> </li>
+                    <li id="stationAddress"><strong>Adresse de la station : </strong><span id="stationAdresse" class="lwc"></span> </li>
+                    <li id="stationStatus"><strong>&Eacute;tat de la station : </strong><span id="stationEtat" class="lwc"></span> </li>
+                    <li id="availableBikes"><strong>Vélos disponibles : </strong><span id="velosDispos"></span> </li>
+                    <li id="availableStands"><strong>Points d'attaches disponibles : </strong><span id="attachesVelos"></span> </li>
                 </ul>
-                <button id="boutonResa" type="button" name="resa" value="reserver">Réserver maintenant</button>
+                <button id="boutonResa" class="btn" type="button" name="resa" value="reserver">Réserver maintenant</button>
             </div>
 
             <!-- FORM RESA -->
@@ -228,8 +231,8 @@
                 </form>
                 <canvas id="canvas"></canvas>
                 <div class="boutonsResa">
-                    <input type="submit" id="validerResa" value="Valider ma réservation">
-                    <input type="button" id="effacerSignature" value="Effacer">
+                    <input type="submit" id="validerResa" class="btn" value="Valider ma réservation">
+                    <input type="button" id="effacerSignature" class="btn" value="Effacer">
                 </div>
             </div>
 
@@ -248,12 +251,12 @@
 
     <div id="timer">
         <h3>Votre réservation</h3>
-        <span class="resaTexte">Aucune réservation en cours</span>
-        <p class="timer">
-            <span class="minutes"></span>
-            <span class="secondes"></span>
-        </p>
-        <input type="button" class="annulerResa" value="Annuler">
+        <p id="detailResa">Vous avez réservé un vélo à la station : <span id="resaStationNom"></span><br><br> Votre réservation est valable pendant : <span id="minutes"></span> min et <span id="secondes"></span> sec</p>
+        <input type="button" id="annulerResa" class="btn" value="Annuler">
+    </div>
+
+    <div id="expr">
+        <p id="expire">Votre session a expiré.</p>
     </div>
 
     <!-- FOOTER -->
@@ -261,8 +264,8 @@
     <footer>
         <div id="cergyPics">
             <a href="https://www.cergypontoise.fr/"><img src="img/logo%20cergy.jpg" alt="logo ville de Cergy-Pontoise"></a>
-            <img src="img/situer-cergy.gif" alt="photo situer Cergy-Pontoise">
-            <img src="img/cergy.jpg" alt="photo ville de Cergy-Pontoise">
+            <!--<img src="img/situer-cergy.gif" alt="photo situer Cergy-Pontoise">
+<img src="img/cergy.jpg" alt="photo ville de Cergy-Pontoise">-->
         </div>
     </footer>
 
