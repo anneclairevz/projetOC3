@@ -309,7 +309,7 @@ textarea {
 /**** TIMER ****/
 
 #timer {
-    /*display: none;*/
+    display: none;
     width: 50%;
     margin: 0 auto;
     padding: 2%;
@@ -340,6 +340,15 @@ footer {
 
 #expr {
     display: none;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#annl {
+    display: none;
+    width: 50%;
+    margin: 0 auto;
+
 }
 
 
