@@ -111,6 +111,10 @@ header {
     align-items: center;
 }
 
+.allEtapes{
+    width:100%;
+}
+
 /* Mise en page du conteneur d'image */
 .image-slider {
     width: 900px;
@@ -150,17 +154,33 @@ header {
 /* Mise en page des boutons du slider */
 .bouton-slider {
     position: relative;
-    /*top: 325px;*/
     color: #0c0467;
     font-size: 2em;
     cursor: pointer;
+}
 
+.bouton-pause {
+    text-align: center;
+    font-weight: 200;
+    color: #0c0467;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+#play {
+    display: none;
 }
 
 /* Changement de couleur des boutons au survol */
 .bouton-slider :hover {
     color: #b0fd0d;
 }
+
+.bouton-pause :hover {
+    color: #b0fd0d;
+}
+
+
 
 /* Position bouton gauche */
 #left {
@@ -439,7 +459,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(255, 255, 255);
 }
 
 #hamburger-sidebar {
